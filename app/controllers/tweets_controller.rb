@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
     else
       @tweets = current_user.tweets.order("created_at desc").page(params[:page])
       flash.now[:danger] = "Tweetに失敗しました。"
-      render "toppages#index"
+      render "toppages/index"
     end
   end
 

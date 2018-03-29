@@ -27,4 +27,9 @@ class User < ApplicationRecord
     self.followings.include?(other_user)
   end
   
+  def feed_tweets
+    Tweet.where(user_id: self.following_ids + [self.id])
+  end
+  
+
 end
